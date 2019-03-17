@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: "Montserrat", sans-serif
+    }
+
+    .w3-row-padding img {
+        margin-bottom: 12px
+    }
+
+    select {
+        width: 100%;
+        padding: 16px 20px;
+        border: none;
+        border-radius: 4px;
+        background-color: #f1f1f1;
+    }
+
+    /* Set the width of the sidebar to 120px */
+    .w3-sidebar {
+        width: 120px;
+        background: #222;
+    }
+
+    /* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
+    #main {
+        margin-left: 120px
+    }
+
+    .sub-menu {
+        padding: 0;
+        max-height: 30em;
+        /* 1.5 x 3 */
+        overflow-y: auto;
+    }
+
+    .sub-menu li {
+        font-size: 1em;
+        padding: .25em 1em;
+        line-height: 1em;
+    }
+
+    /* The container */
+    .container {
+        display: block;
+        position: relative;
+        padding-left: 35px;
+        margin-bottom: 12px;
+        cursor: pointer;
+        font-size: 16px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    /* Hide the browser's default radio button */
+    .container input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+    /* Create a custom radio button */
+    .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 20px;
+        width: 20px;
+        background-color: #eee;
+        border-radius: 50%;
+    }
+
+    /* On mouse-over, add a grey background color */
+    .container:hover input~.checkmark {
+        background-color: #ccc;
+    }
+
+    /* When the radio button is checked, add a blue background */
+    .container input:checked~.checkmark {
+        background-color: rgb(64, 147, 214);
+    }
+
+    /* Create the indicator (the dot/circle - hidden when not checked) */
+    .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+    }
+
+    /* Show the indicator (dot/circle) when checked */
+    .container input:checked~.checkmark:after {
+        display: block;
+    }
+
+    /* Style the indicator (dot/circle) */
+    .container .checkmark:after {
+        top: 8px;
+        left: 8px;
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background: white;
+    }
+
+
+
+    /* Remove margins from "page content" on small screens */
+    @media only screen and (max-width: 600px) {
+        #main {
+            margin-left: 0
+        }
+    }
+</style>
+
+<body class="w3-white">
+
+    <!-- Icon Bar (Sidebar - hidden on small screens) -->
+    <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
+        <!-- Avatar image in top left corner -->
+        <img src="https://www.shareicon.net/download/2016/06/24/614494_new_512x512.png" style="width:100%">
+        <a href="#" class="w3-bar-item w3-button w3-padding-large w3-black">
+            <i class="fa fa-home w3-xxlarge"></i>
+            <p>HOME</p>
+        </a>
+        <a href="#overview" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+            <i class="fa fa-briefcase w3-xxlarge"></i>
+            <p>OVERVIEW</p>
+        </a>
+        <a href="#support" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+            <i class="fa fa-user w3-xxlarge"></i>
+            <p>SUPPORT</p>
+        </a>
+        <a href="#query" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+            <i class="fa fa-envelope w3-xxlarge"></i>
+            <p>QUERY</p>
+        </a>
+    </nav>
+
+    <!-- Navbar on small screens (Hidden on medium and large screens) -->
+    <div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
+        <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
+            <a href="#" class="w3-bar-item w3-button" style="width:25% !important">HOME</a>
+            <a href="#overview" class="w3-bar-item w3-button" style="width:25% !important">OVERVIEW</a>
+            <a href="#support" class="w3-bar-item w3-button" style="width:25% !important">SUPPORT</a>
+            <a href="#query" class="w3-bar-item w3-button" style="width:25% !important">QUERY</a>
+        </div>
+    </div>
+
+    <!-- Page Content -->
+    <div class="w3-padding-large" id="main">
+        <!-- Header/Home -->
+        <header class="w3-container w3-padding-32 w3-center w3-white" id="home">
+            <h1 class="w3-jumbo"><span class="w3-hide-small">Microsoft</span> Azure</h1>
+            <p>Cloud Service Provider</p>
+            <div class="w3-row-padding w3-center" style="margin:0 -16px">
+                <div class="w3-half w3-margin-bottom">
+                    <img src="img/successCloudNew.svg" alt="boy" class="w3-image" width="992" height="1108" align="left">
+                </div>
+
+                <div class="w3-half w3-center w3-padding-left" style="margin:0 -16px">
+                    <ul class="w3-ul w3-half w3-white w3-center w3-opacity w3-hover-opacity-off">
+                        <li class="w3-dark-grey w3-xlarge w3-padding-16">Debian 9 "Stretch"</li>
+                        <li class="w3-padding-8"><a href="#">Continue to Subscribe</a></li>
+                        <li class="w3-padding-8"><a href="#">Save to List</a></li>
+                        <li class="w3-padding-8">Latest Version: 2019.01.0.20190102</li>
+                        <li class="w3-padding-10">
+                            <h2>$ 0.15</h2>
+                            <span class="w3-opacity">per hour</span>
+                        </li>
+                        <li class="w3-padding-8"><a href="#"> View Details </a></li>
+                        <li class="w3-light-grey w3-padding-16">
+                            <button class="w3-button w3-white w3-padding-large w3-hover-black">Create</button>
+                        </li>
+                    </ul>
+                    <ul class="w3-ul w3-half w3-white w3-center w3-opacity w3-hover-opacity-off">
+                        <li class="w3-dark-grey w3-xlarge w3-padding-16">Debian 8 "Jessie"</li>
+                        <li class="w3-padding-8"><a href="#">Continue to Subscribe</a></li>
+                        <li class="w3-padding-8"><a href="#">Save to List</a></li>
+                        <li class="w3-padding-8">Latest Version: 2019.01.0.20190102</li>
+                        <li class="w3-padding-10">
+                            <h2>$ 0.25</h2>
+                            <span class="w3-opacity">per hour</span>
+                        </li>
+                        <li class="w3-padding-8"><a href="#"> View Details </a></li>
+                        <li class="w3-light-grey w3-padding-16">
+                            <button class="w3-button w3-white w3-padding-large w3-hover-black">Create</button>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                </div>
+        </header>
+
+        <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="overview">
+            <h2 class="w3-text-black">Product Overview</h2>
+            <hr style="width:200px" class="w3-opacity">
+            <p>
+                The Azure Linux AMI is a supported and maintained Linux image provided by MS Services for use on Azure Elastic Compute Cloud.
+                It is designed to provide a stable, secure, and high performance execution environment for applications running
+                on Azure. It also includes packages that enable easy integration with MS Services, including launch configuration
+                tools and many popular AWS libraries and tools. Azure Web Services provides ongoing security and maintenance
+                updates to all instances running the Azure Linux ALI. The Azure Linux ALI is provided at no additional charge
+                to Azure users. Version 2018.03.0.20181129 By MS Services Categories Operating Systems Operating System Linux/Unix,
+                Azure Linux 2018.03 Delivery Methods Azure Machine Image Highlights Integration - The Azure Linux ALI includes
+                packages and configurations that provide tight integration with MS Services. Secure Configuration - The configuration
+                of the Azure.
+            </p>
+            <h3 class="w3-padding-16 w3-text-black">Images</h3>
+            <div class="w3-row-padding" style="margin:0 -16px">
+                <ul class="w3-ul w3-white w3-left">
+                    <li class="w3-padding-12">Access via Azure Portal: For <a href="https://portal.microsoftazure.de/#create/credativ.Debian9">Azure
+                            Germany
+                        </a>, For other <a href="https://portal.azure.com/#create/credativ.Debian9">Regions</a></li>
+                    <li class="w3-padding-12">Access via Azure Resource Manager (ARM):<br> The Debian images can be found
+                        in the image URN, with publisher: <code>credativ</code><br>
+                        <a href="https://docs.microsoft.com/en-us/azure/virtual-machines/linux/debian-create-upload-vhd">Commands</a>
+                        to run Image via the CLI client.
+                    </li>
+                    <li class="w3-padding-12">Build Automation: <br>Debian VMs in Azure require the device drivers for Hyper-V
+                        (hv_*.ko), which are already available with Debian's Jessie kernel. In addition, Azure images require
+                        a provisioning daemon to be preinstalled on the image, called the Azure Linux agent. See also Azure's
+                        documentation for building Debian images.<br>
+                        <a href="https://github.com/credativ/azure-manage">Scripts</a> to build Debian's Azure images<br>
+                        <a href="https://azure-build.debian.net/">Jenkins infrastructure</a> for building Azure images.
+                    </li>
+                </ul>
+            </div>
+            <h3 class="w3-padding-16 w3-text-black">Pricing Information</h3>
+            <div class="w3-row-padding" style="margin:0 -16px">
+                <div class="w3-half w3-margin-bottom">
+                    <ul class="w3-ul w3-white w3-center w3-hover-opacity-off">
+                        <li class="w3-dark-grey w3-xlarge w3-padding-32">Estimating your costs</li>
+                        <li class="w3-padding-4">Choose your region and fulfillment option to see the pricing details. Then,
+                            modify the estimated price by choosing different instance types.</li>
+                        <li class="w3-padding-12">Region:
+                            <form action="/">
+                                <select name="regian">
+                                    <option value="us-east">US-East</option>
+                                    <option value="us-west">US-West</option>
+                                    <option value="eu">EU</option>
+                                    <option value="asia pacific">Asia Pacific</option>
+                                </select>
+                            </form>
+                        </li>
+                        <li class="w3-padding-12">Fulfillment Option:
+                            <form action="/">
+                                <select name="options">
+                                    <option value="64-bit ALI">64-bit Azure Linux Image</option>
+                                </select>
+                            </form>
+                            <li class="w3-padding-16 w3-white">
+                                Use this tool to estimate the software and infrastructure costs based on your configuration choices. Your usage and costs
+                                might be different from this estimate. They will be reflected on your monthly AWS billing
+                                reports.
+                            </li>
+                    </ul>
+                </div>
+                <ul class="w3-ul w3-white w3-center w3-hover-opacity-off">
+                    <li class="w3-dark-grey w3-xlarge w3-padding-32">Azure ALI</li>
+                    <li class="w3-padding-4">
+                        The table shows current software and infrastructure pricing for services hosted in US East (Oregon). Additional taxes or
+                        fees may apply.
+                    </li>
+                    <li class="w3-padding-9">
+                        <ul class="sub-menu">
+                            <li>
+                                <label class="container">m1.medium
+                                    <input type="radio" checked="checked" name="radio">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="container">m2.medium
+                                    <input type="radio" name="radio">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="container">t1.medium
+                                    <input type="radio" name="radio">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="container">t2.medium
+                                    <input type="radio" name="radio">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="container">m1.large
+                                    <input type="radio" name="radio">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="container">m2.large
+                                    <input type="radio" checked="checked" name="radio">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="container">f1.small
+                                    <input type="radio" name="radio">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="container">f2.medium
+                                    <input type="radio" name="radio">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="container">f9.large
+                                    <input type="radio" name="radio">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="container">c3.xlarge
+                                    <input type="radio" name="radio">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="container">c2.xxlarge
+                                    <input type="radio" checked="checked" name="radio">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="container">l6.medium
+                                    <input type="radio" name="radio">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="container">c3.xlarge
+                                    <input type="radio" name="radio">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="container">m1.medium
+                                    <input type="radio" checked="checked" name="radio">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="container">m2.medium
+                                    <input type="radio" name="radio">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="container">t1.medium
+                                    <input type="radio" name="radio">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="container">t2.medium
+                                    <input type="radio" name="radio">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="container">m1.large
+                                    <input type="radio" name="radio">
+                                    <span class="checkmark"></span>
+                                </label><label class="container">m1.medium
+                                    <input type="radio" checked="checked" name="radio">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="container">m2.medium
+                                    <input type="radio" name="radio">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="container">t1.medium
+                                    <input type="radio" name="radio">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="container">t2.medium
+                                    <input type="radio" name="radio">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="container">m1.large
+                                    <input type="radio" name="radio">
+                                    <span class="checkmark"></span>
+                                </label><label class="container">m1.medium
+                                    <input type="radio" checked="checked" name="radio">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="container">m2.medium
+                                    <input type="radio" name="radio">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="container">t1.medium
+                                    <input type="radio" name="radio">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="container">t2.medium
+                                    <input type="radio" name="radio">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="container">m1.large
+                                    <input type="radio" name="radio">
+                                    <span class="checkmark"></span>
+                                </label><label class="container">m1.medium
+                                    <input type="radio" checked="checked" name="radio">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="container">m2.medium
+                                    <input type="radio" name="radio">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="container">t1.medium
+                                    <input type="radio" name="radio">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="container">t2.medium
+                                    <input type="radio" name="radio">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="container">m1.large
+                                    <input type="radio" name="radio">
+                                    <span class="checkmark"></span>
+                                </label><label class="container">m1.medium
+                                    <input type="radio" checked="checked" name="radio">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="container">m2.medium
+                                    <input type="radio" name="radio">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="container">t1.medium
+                                    <input type="radio" name="radio">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="container">t2.medium
+                                    <input type="radio" name="radio">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="container">m1.large
+                                    <input type="radio" name="radio">
+                                    <span class="checkmark"></span>
+                                </label><label class="container">m1.medium
+                                    <input type="radio" checked="checked" name="radio">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="container">m2.medium
+                                    <input type="radio" name="radio">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="container">t1.medium
+                                    <input type="radio" name="radio">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="container">t2.medium
+                                    <input type="radio" name="radio">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="container">m1.large
+                                    <input type="radio" name="radio">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="w3-padding-16">
+                        Estimated Cost
+                        <h2>$ 0.185</h2>
+                        <span class="w3-opacity">per hour</span>
+                </ul>
+            </div>
+        </div>
+        </div>
+        <div class="w3-padding-64 w3-content" id="support">
+            <h2 class="w3-text-black">Support Information</h2>
+            <hr style="width:200px" class="w3-opacity">
+
+            Support is available through <a href="https://azure.microsoft.com/en-in/support/community/">forums</a>, technical
+            FAQs and the Service Help Dashboard. Paid support is available.
+            <h4 class="w3-text-black">Azure Infrastructure</h4>
+            Azure Support is a one-on-one support channel that is staffed 24x7x365 with experienced
+            support engineers. Azure Support offers four support plans: Basic, Developer, Business, and Enterprise. The Basic
+            plan is free of charge and offers support for account and billing questions and service limit increases. The
+            other plans offer an unlimited number of technical support cases with pay-by-the-month pricing and no long-term
+            contracts, providing the level of support that meets your needs. Learn more
+        </div>
+
+        <div class="w3-padding-32 w3-content w3-text-grey" id="query">
+            <h2 class="w3-text-black">Ask Your Query</h2>
+            <hr style="width:200px" class="w3-opacity">
+
+            <form action="#" target="_blank">
+                <p><input class="w3-input w3-padding-16" type="text" placeholder="Name" required name="Name"></p>
+                <p><input class="w3-input w3-padding-16" type="text" placeholder="Email" required name="Email"></p>
+                <p><input class="w3-input w3-padding-16" type="text" placeholder="Question" required name="Question"></p>
+                <p><input class="w3-input w3-padding-16" type="text" placeholder="Details" required name="Details"></p>
+                <p>
+                    <button class="w3-button w3-light-grey w3-padding-large" type="submit">
+                        <i class="fa fa-paper-plane"></i> SUBMIT
+                    </button>
+                </p>
+            </form>
+        </div>
+
+        <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
+            <i class="fa fa-facebook-official w3-hover-opacity"> Azure on Facebook |</i>
+            <i class="fa fa-twitter w3-hover-opacity"> Azure on Twitter |</i>
+            <i class="fa fa-linkedin w3-hover-opacity"> Azure on Linkedin</i>
+        </footer>
+
+    </div>
+
+</body>
+<script>
+// Cache selectors
+var lastId,
+ topMenu = $("#mainNav"),
+ topMenuHeight = topMenu.outerHeight()+1,
+ // All list items
+ menuItems = topMenu.find("a"),
+ // Anchors corresponding to menu items
+ scrollItems = menuItems.map(function(){
+   var item = $($(this).attr("href"));
+    if (item.length) { return item; }
+ });
+
+// Bind click handler to menu items
+// so we can get a fancy scroll animation
+menuItems.click(function(e){
+  var href = $(this).attr("href"),
+      offsetTop = href === "#" ? 0 : $(href).offset().top-topMenuHeight+1;
+  $('html, body').stop().animate({ 
+      scrollTop: offsetTop
+  }, 850);
+  e.preventDefault();
+});
+
+// Bind to scroll
+$(window).scroll(function(){
+   // Get container scroll position
+   var fromTop = $(this).scrollTop()+topMenuHeight;
+   
+   // Get id of current scroll item
+   var cur = scrollItems.map(function(){
+     if ($(this).offset().top < fromTop)
+       return this;
+   });
+   // Get the id of the current element
+   cur = cur[cur.length-1];
+   var id = cur && cur.length ? cur[0].id : "";
+   
+   if (lastId !== id) {
+       lastId = id;
+       // Set/remove active class
+       menuItems
+         .parent().removeClass("active")
+         .end().filter("[href=#"+id+"]").parent().addClass("active");
+   }                   
+});
+
+</script>
+
+</html>
